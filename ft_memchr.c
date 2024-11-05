@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/05 12:22:45 by seilkiv           #+#    #+#             */
+/*   Updated: 2024/11/05 15:50:51 by seilkiv          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	const unsigned char	*p;
+
+	p = (unsigned char *)s;
+	if (!s)
+	{
+		return (NULL);
+	}
+	while (n > 0)
+	{
+		if (*p == (unsigned char)c)
+		{
+			return ((void *)p);
+		}
+		p++;
+		n--;
+	}
+	return (NULL);
+}

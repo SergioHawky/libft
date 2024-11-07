@@ -6,13 +6,13 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:27:41 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/05 15:49:37 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/07 13:41:43 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*p;
 	size_t	i;

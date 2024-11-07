@@ -6,83 +6,61 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:52:14 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/05 15:52:15 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/07 15:55:27 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-static size_t	count_words(const char *s, char c)
+static void free_all(char **dest, size_t counter)
 {
-	size_t	count;
-	int		in_word;
-
-	count = 0;
-	in_word = 0;
-	while (*s)
-	{
-		if (*s != c && in_word == 0)
-		{
-			count++;
-			in_word = 1;
-		}
-		else if (*s == c)
-			in_word = 0;
-		s++;
-	}
-	return (count);
+	while (counter-- > 0)
+		free(dest[counter]);
+	free(dest);
+	return (NULL);
+	
+}
+static int count_words(const char *s, char c)
+{
+    int counter;
+    int i;
+    counter = 0;
+    i = 0;
+    while (s[i])
+    {
+        while(s[i] && s[i] == c)
+            i++;
+        counter++;
+        while(s[i] && s[i] != c)
+            i++;
+    }
+    return (counter);
 }
 
-static char	*word_dup(const char *s, size_t len)
+char **ft_split(char const *s, char c)
 {
-	char	*word;
-
-	word = (char *)malloc((len + 1) * sizeof(char));
-	if (!word)
-		return (NULL);
-	for (size_t i = 0; i < len; i++)
-		word[i] = s[i];
-	word[len] = '\0';
-	return (word);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**result;
-	size_t	word_count;
-	size_t	i;
-			const char *start = s;
-	size_t	len;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	word_count = count_words(s, c);
-	result = (char **)malloc((word_count + 1) * sizeof(char *));
-	if (!result)
-		return (NULL);
-	while (*s)
-	{
-		if (*s != c)
-		{
-			len = 0;
-			while (*s && *s != c)
-			{
-				s++;
-				len++;
-			}
-			result[i] = word_dup(start, len);
-			if (!result[i++])
-			{
-				while (i > 0)
-					free(result[--i]);
-				free(result);
-				return (NULL);
-			}
-		}
-		else
-			s++;
-	}
-	result[i] = NULL;
-	return (result);
+    int counter;
+    int i;
+    int j;
+    j = 0;
+    counter = 0;
+    i = 0;
+    char **dest;
+    dest = malloc(sizeof(char*) * (count_words(s, c) + 1));
+    if (!dest)
+        return (NULL);
+    while (s[i])
+    {
+        while(s[i] && s[i] == c)
+            i++;
+        j=i;
+        while(s[i] && s[i] != c)
+            i++;
+        dest[counter] = malloc(sizeof(char) *(i-j+1));
+		free_all(dest, counter);
+        ft_strlcpy(dest[counter], &s[j], (i-j+1));
+        counter++;
+    }
+	return(dest);
 }

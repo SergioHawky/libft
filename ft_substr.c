@@ -6,7 +6,7 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:27:12 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/05 15:51:19 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/11 16:11:16 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,26 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
-	size_t	n;
+	size_t	i;
+	size_t	s_len;
 
-	n = 0;
 	if (!s)
 		return (NULL);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - start)
+		len = s_len - start;
 	p = (char *)malloc((len + 1) * sizeof(char));
 	if (!p)
 		return (NULL);
-	while (*s && start > 0)
+	i = 0;
+	while (i < len && s[start + i])
 	{
-		s++;
-		start--;
+		p[i] = s[start + i];
+		i++;
 	}
-	while (*s && n < len)
-	{
-		p[n] = *s;
-		s++;
-		n++;
-	}
-	p[n] = '\0';
+	p[i] = '\0';
 	return (p);
 }
 

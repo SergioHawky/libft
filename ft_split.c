@@ -6,13 +6,13 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 15:52:14 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/11 12:33:45 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/11 16:01:35 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	**free_all(char **dest, size_t counter)
+static char	**free_all(char **dest, int counter)
 {
 	while (counter-- > 0)
 		free(dest[counter]);
@@ -31,43 +31,55 @@ static int	count_words(const char *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		if (s[i] && s[i] != c)
-			counter++;
+		if (s[i] == '\0')
+			break ;
 		while (s[i] && s[i] != c)
 			i++;
+		counter++;
 	}
 	return (counter);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**split(char const *s, char c, char **dest, int counter)
 {
-	int		counter;
-	int		i;
-	int		j;
-	char	**dest;
+	int	i;
+	int	j;
 
-	dest = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!dest)
-		return (NULL);
 	j = 0;
-	counter = 0;
 	i = 0;
 	while (s[i])
 	{
 		while (s[i] && s[i] == c)
 			i++;
+		if (s[i] == '\0')
+			break ;
 		j = i;
 		while (s[i] && s[i] != c)
 			i++;
-		if (i > j)
+		dest[counter] = malloc(sizeof(char) * (i - j + 1));
+		if (!dest[counter])
 		{
-			dest[counter] = malloc(sizeof(char) * (i - j + 1));
-			if (!dest[counter])
-				return (free_all(dest, counter));
-			ft_strlcpy(dest[counter], &s[j], (i - j + 1));
-			counter++;
+			free_all(dest, counter);
+			return (NULL);
 		}
+		ft_strlcpy(dest[counter], &s[j], (i - j + 1));
+		counter++;
 	}
 	dest[counter] = NULL;
+	return (dest);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**dest;
+	int		counter;
+
+	counter = 0;
+	if (!s)
+		return (NULL);
+	dest = malloc(sizeof(char *) * (count_words(s, c) + 1));
+	if (!dest)
+		return (NULL);
+	dest = split(s, c, dest, counter);
 	return (dest);
 }

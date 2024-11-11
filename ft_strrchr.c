@@ -6,7 +6,7 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:26:45 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/05 16:13:51 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/11 16:14:28 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,15 @@ char	*ft_strrchr(const char *s, int c)
 	const char	*p;
 
 	p = NULL;
-	if (!s)
-	{
-		return ((char *)p);
-	}
 	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == (unsigned char)c)
 		{
 			p = s;
 		}
 		s++;
 	}
-	if (c == '\0')
+	if ((unsigned char)c == '\0')
 	{
 		return ((char *)s);
 	}

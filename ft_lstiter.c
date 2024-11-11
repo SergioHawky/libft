@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/30 14:08:15 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/05 16:07:57 by seilkiv          ###   ########.fr       */
+/*   Created: 2024/11/11 12:10:23 by seilkiv           #+#    #+#             */
+/*   Updated: 2024/11/11 12:22:42 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	t_list	*list_ptr;
 
-	d = dest;
-	s = (unsigned char *)src;
-	if (!dest && !src)
-		return (dest);
-	if (d < s)
+	if (!lst)
+		return ;
+	list_ptr = lst;
+	while (list_ptr != NULL)
 	{
-		while (n--)
-		{
-			*d++ = *s++;
-		}
+		(*f)(list_ptr->content);
+		list_ptr = list_ptr->next;
 	}
-	else
-	{
-		d += n;
-		s += n;
-		while (n--)
-		{
-			*(--d) = *(--s);
-		}
-	}
-	return (dest);
 }

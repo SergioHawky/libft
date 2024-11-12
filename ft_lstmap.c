@@ -6,7 +6,7 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:10:54 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/11 16:33:29 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/12 13:01:48 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,27 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new;
-	t_list	*node;
+	t_list	*head;
+	void	*content;
 
-	if (!f || !lst)
-		return (NULL);
-	new = NULL;
-	while (lst)
+	head = NULL;
+	while (lst != NULL)
 	{
-		node = ft_lstnew(f(lst->content));
-		if (!node)
+		content = f(lst->content);
+		if (!content)
 		{
-			ft_lstclear(&new, (*del));
+			ft_lstclear(&head, del);
 			return (NULL);
 		}
-		ft_lstadd_back(&new, node);
+		new = ft_lstnew(content);
+		if (!new)
+		{
+			del(content);
+			ft_lstclear(&head, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&head, new);
 		lst = lst->next;
 	}
-	return (new);
+	return (head);
 }

@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+//This function duplicates a string and returns the duplicate
+
 char	*ft_strdup(const char *s)
 {
 	char	*p;

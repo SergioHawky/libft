@@ -38,7 +38,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (p);
 }
 
-/*int	main(void)
+/*#include <stdio.h>
+int	main(void)
 {
 	char *s = "ola mundo 123!";
 	char *a = ft_substr(s, 5, 6);

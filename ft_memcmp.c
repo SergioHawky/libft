@@ -35,3 +35,15 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
+/*#include <string.h>
+#include <stdio.h>
+int	main(void)
+{
+	char c[11] = "test string";
+	int size = 6;
+
+	printf("%d\n", ft_memcmp(c, "test ", size));
+	printf("%d\n", memcmp(c, "test ", size));
+	
+	return (0);
+}*/

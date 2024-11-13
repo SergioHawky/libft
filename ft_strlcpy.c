@@ -29,3 +29,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	dst[i] = '\0';
 	return (src_len);
 }
+/*#include <stdio.h>
+int main() {
+    char *dest;
+    char *src = "Hello World!";
+
+    size_t result = ft_strlcpy(dest, src, 6);
+
+    printf("Copied string: %s\n", dest);
+    printf("Total characters: %ld\n", result);
+
+    return 0;
+}*/

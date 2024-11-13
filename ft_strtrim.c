@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//This function searches for the char c in the string str
+//It returns a pointer to the last char in finds 
+
 static int	matches(char c, char const *set)
 {
 	while (*set)
@@ -40,3 +43,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(str, s1, s1_len + 1);
 	return (str);
 }
+/*#include <stdio.h>
+int	main(void)
+{
+	char *test;
+
+	test = ft_strtrim("12345abc123456", "1234567890");
+	printf("%s\n", test);
+	free(test);
+}*/

@@ -53,10 +53,10 @@ BONUS_OBJ = $(BONUS_SRC:.c=.o)
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-all: $(NAME)
-
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
+
+all: $(NAME)
 
 bonus: $(NAME) $(BONUS_OBJ)
 	ar rcs $(NAME) $(BONUS_OBJ)

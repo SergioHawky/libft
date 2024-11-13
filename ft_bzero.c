@@ -12,6 +12,8 @@
 
 #include "libft.h"
 
+//This function will set n number of bytes of the string str to \0 character
+
 void	ft_bzero(void *s, size_t n)
 {
 	char	*p;
@@ -24,3 +26,12 @@ void	ft_bzero(void *s, size_t n)
 		n--;
 	}
 }
+
+/*#include <stdio.h>
+int main(){
+	char test[] = "testing string";
+	
+	printf("before function: %s\n", test);
+	ft_bzero (test, 0);
+	printf("after function: %s\n", test);
+}*/

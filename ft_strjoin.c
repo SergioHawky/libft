@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//this function concatonates 2 strings together in a string
+//It returns the new string
+
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*p;

@@ -36,11 +36,12 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (d_len + s_len);
 }
-/*int main()
+/*#include <stdio.h>
+int main()
 {
 	char dst[50] = "Ola ";
 	char *src = "Mundo !";
 
 	printf("Meu: %zu\n", ft_strlcat(dst, src, 7));
-	printf("dst: %s", dst);
+	printf("dst: %s\n", dst);
 }*/

@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+//This function searches n bytes of the str for the string to find
+//It returns a pointer to the found string or null if there wasn't 1
+
 char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
 	unsigned char	*p1;

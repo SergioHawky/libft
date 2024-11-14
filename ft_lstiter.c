@@ -25,7 +25,7 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 		list_ptr = list_ptr->next;
 	}
 }
-#include <stdio.h>
+/*#include <stdio.h>
 
 void print_content(void *content)
 {
@@ -56,4 +56,4 @@ int main(void)
     free(node1);
     free(node2);
     return 0;
-}
+}*/

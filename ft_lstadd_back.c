@@ -21,7 +21,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	else
 		*lst = new;
 }
-#include <stdio.h>
+/*#include <stdio.h>
 void print_list(t_list *lst)
 {
      while (lst)
@@ -50,4 +50,4 @@ int main()
      print_list(list);  // Deve imprimir"Primeiro->Segundo->Terceiro >NULL"
 
      return (0);
-}
+}*/

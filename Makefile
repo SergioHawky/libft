@@ -58,15 +58,16 @@ $(NAME): $(OBJ)
 
 all: $(NAME)
 
-bonus: $(NAME) $(BONUS_OBJ)
+bonus: $(BONUS_OBJ)
 	ar rcs $(NAME) $(BONUS_OBJ)
+	@touch bonus
 
 clean:
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ) bonus
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re

@@ -27,33 +27,33 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 }
 /*#include <stdio.h>
 
-void print_content(void *content)
+void	print_content(void *content)
 {
-    printf("Conteúdo: %d\n", *(int *)content);
+	printf("Conteúdo: %d\n", *(int *)content);
 }
 
-int main(void)
+int	main(void)
 {
-    t_list *node1 = ft_lstnew(malloc(sizeof(int)));
-    t_list *node2 = ft_lstnew(malloc(sizeof(int)));
+	t_list *node1 = ft_lstnew(malloc(sizeof(int)));
+	t_list *node2 = ft_lstnew(malloc(sizeof(int)));
 
-    if (!node1 || !node2 )
-    {
-        printf("Erro ao alocar memória para os nós.\n");
-        return (1);
-    }
+	if (!node1 || !node2 )
+	{
+		printf("Erro ao alocar memória para os nós.\n");
+		return (1);
+	}
 
-    *(int *)node1->content = 10;
-    *(int *)node2->content = 20;
+	*(int *)node1->content = 10;
+	*(int *)node2->content = 20;
 
-    node1->next = node2;
-    node2->next = NULL;
+	node1->next = node2;
+	node2->next = NULL;
 
-    ft_lstiter(node1, print_content);
+	ft_lstiter(node1, print_content);
 
-    free(node1->content);
-    free(node2->content);
-    free(node1);
-    free(node2);
-    return 0;
+	free(node1->content);
+	free(node2->content);
+	free(node1);
+	free(node2);
+	return (0);
 }*/

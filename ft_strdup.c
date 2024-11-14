@@ -12,15 +12,13 @@
 
 #include "libft.h"
 
-//This function duplicates a string and returns the duplicate
+// This function duplicates a string and returns the duplicate
 
 char	*ft_strdup(const char *s)
 {
 	char	*p;
 	size_t	i;
 
-	if (!s)
-		return (NULL);
 	p = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!p)
 	{

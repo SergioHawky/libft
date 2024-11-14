@@ -12,8 +12,8 @@
 
 #include "libft.h"
 
-//This function searches for the char c in the string str
-//It returns a pointer to the last char in finds 
+// This function searches for the char c in the string str
+// It returns a pointer to the last char in finds
 
 char	*ft_strrchr(const char *s, int c)
 {

@@ -56,7 +56,7 @@ char	*ft_itoa(int n)
 	return (p);
 }
 /*#include <stdio.h>
-int main()
+int	main(void)
 {
 	char *s = ft_itoa(-444444444);
 	printf("%s\n", s);

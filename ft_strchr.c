@@ -12,13 +12,11 @@
 
 #include "libft.h"
 
-//This function searches for the char c in the string str
-//It returns a pointer to the first char in finds 
+// This function searches for the char c in the string str
+// It returns a pointer to the first char in finds
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
 	while (*s)
 	{
 		if (*s == (unsigned char)c)

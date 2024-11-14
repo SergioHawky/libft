@@ -12,15 +12,15 @@
 
 #include "libft.h"
 
-//this function concatonates 2 strings together in a string
-//It returns the new string
+// this function concatonates 2 strings together in a string
+// It returns the new string
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*p;
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	j = 0;
 	p = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));

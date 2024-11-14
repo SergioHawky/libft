@@ -20,29 +20,29 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	*lst = new;
 }
 /*#include <stdio.h>
-void print_list(t_list *lst)
+void	print_list(t_list *lst)
  {
-     while (lst)
-     {
-         printf("%s -> ", (char *)lst->content);
-         lst = lst->next;
-     }
-     printf("NULL\n");
+		while (lst)
+		{
+			printf("%s -> ", (char *)lst->content);
+			lst = lst->next;
+		}
+		printf("NULL\n");
  }
 
  int main()
  {
-     t_list *head = NULL;
-     t_list *node1 = ft_lstnew("Segundo");
-     t_list *node2 = ft_lstnew("Primeiro");
+		t_list *head = NULL;
+		t_list *node1 = ft_lstnew("Segundo");
+		t_list *node2 = ft_lstnew("Primeiro");
 
-     ft_lstadd_front(&head, node1);
-     ft_lstadd_front(&head, node2);
+		ft_lstadd_front(&head, node1);
+		ft_lstadd_front(&head, node2);
 
-     printf("Lista após adicionar os nós:\n");
-     print_list(head);
-     free(node1);
-     free(node2);
+		printf("Lista após adicionar os nós:\n");
+		print_list(head);
+		free(node1);
+		free(node2);
 
-     return (0);
+		return (0);
 }*/

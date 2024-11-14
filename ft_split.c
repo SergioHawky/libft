@@ -85,17 +85,17 @@ char	**ft_split(char const *s, char c)
 }
 
 /*#include <stdio.h>
-int main() {
-    char str1[] = "Hello world abc 32";
-    char delimiter1 = ' ';
-    char **result1 = ft_split(str1, delimiter1);
+int	main(void) {
+	char str1[] = "Hello world abc 32";
+	char delimiter1 = ' ';
+	char **result1 = ft_split(str1, delimiter1);
 
-    printf("Separando \"%s\" pelo delimitador '%c'\n", str1, delimiter1);
-    for (int i = 0; result1[i] != NULL; i++) {
-        printf("Palavra %d: %s\n", i + 1, result1[i]);
-        free(result1[i]);  // Liberar cada string alocada
-    }
-    free(result1);  // Liberar o array principal
+	printf("Separando \"%s\" pelo delimitador '%c'\n", str1, delimiter1);
+	for (int i = 0; result1[i] != NULL; i++) {
+		printf("Palavra %d: %s\n", i + 1, result1[i]);
+		free(result1[i]);  // Liberar cada string alocada
+	}
+	free(result1);  // Liberar o array principal
 
-    return 0;
+	return (0);
 }*/

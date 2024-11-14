@@ -25,21 +25,21 @@ int	ft_lstsize(t_list *lst)
 	return (n);
 }
 /*#include <stdio.h>
-int main(void)
+int	main(void)
 {
-    t_list *node1 = ft_lstnew("Primeiro");
-    t_list *node2 = ft_lstnew("Segundo");
-    t_list *node3 = ft_lstnew("Terceiro");
+	t_list *node1 = ft_lstnew("Primeiro");
+	t_list *node2 = ft_lstnew("Segundo");
+	t_list *node3 = ft_lstnew("Terceiro");
 
-    node1->next = node2;
-    node2->next = node3;
+	node1->next = node2;
+	node2->next = node3;
 
-    int size = ft_lstsize(node1);
+	int size = ft_lstsize(node1);
 
-    printf("Tamanho da lista: %d\n", size);
-    free(node1);
-    free(node2);
-    free(node3);
+	printf("Tamanho da lista: %d\n", size);
+	free(node1);
+	free(node2);
+	free(node3);
 
-    return 0;
+	return (0);
 }*/

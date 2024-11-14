@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-//This functions copies n bytes from src into dest
-//It takes care of overlaping memory
-//It returns a pointer to n the start of dest
+// This functions copies n bytes from src into dest
+// It takes care of overlaping memory
+// It returns a pointer to n the start of dest
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -46,13 +46,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 /*#include <stdio.h>
 #include <string.h>
-int main() {
-    char src1[] = "Hello, World!";
-    char dest1[20];
 
-    printf("Antes: src = \"%s\", dest = \"%s\"\n", src1, dest1);
-    ft_memmove(dest1, src1, strlen(src1) + 1);
-    printf("Depois: src = \"%s\", dest = \"%s\"\n\n", src1, dest1);
+int	main(void) {
+	char src1[] = "Hello, World!";
+	char dest1[20];
 
-    return 0;
+	printf("Antes: src = \"%s\", dest = \"%s\"\n", src1, dest1);
+	ft_memmove(dest1, src1, strlen(src1) + 1);
+	printf("Depois: src = \"%s\", dest = \"%s\"\n\n", src1, dest1);
+
+	return (0);
 }*/

@@ -6,14 +6,14 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 15:19:25 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/10/30 14:39:37 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/14 15:11:26 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 //This function will set n number of bytes of the string str to the ascci char c
-//It returns a pointer to the start of str
+// It returns a pointer to the start of str
 
 void	*ft_memset(void *s, int c, size_t n)
 {

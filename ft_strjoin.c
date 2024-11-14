@@ -6,7 +6,7 @@
 /*   By: seilkiv <seilkiv@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 12:26:03 by seilkiv           #+#    #+#             */
-/*   Updated: 2024/11/05 16:02:16 by seilkiv          ###   ########.fr       */
+/*   Updated: 2024/11/14 15:17:58 by seilkiv          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!s1 && !s2)
+		return (NULL);
 	i = 0;
 	j = 0;
 	p = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!p)
-	{
 		return (NULL);
-	}
 	while (s1[i])
 	{
 		p[i] = s1[i];
